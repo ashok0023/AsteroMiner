@@ -1,7 +1,7 @@
-[2025-11-13 16:56:59 +0530] [92878] [INFO] Starting gunicorn 23.0.0
-[2025-11-13 16:56:59 +0530] [92878] [INFO] Listening at: http://0.0.0.0:8080 (92878)
-[2025-11-13 16:56:59 +0530] [92878] [INFO] Using worker: sync
-[2025-11-13 16:56:59 +0530] [92924] [INFO] Booting worker with pid: 92924
+[2025-11-13 17:04:06 +0530] [98749] [INFO] Starting gunicorn 23.0.0
+[2025-11-13 17:04:06 +0530] [98749] [INFO] Listening at: http://0.0.0.0:8080 (98749)
+[2025-11-13 17:04:06 +0530] [98749] [INFO] Using worker: sync
+[2025-11-13 17:04:06 +0530] [98795] [INFO] Booting worker with pid: 98795
 /Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/cohere/core/pydantic_utilities.py:13: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
   from pydantic.v1.datetime_parse import parse_date as parse_date
 /Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
@@ -13,93 +13,9 @@ https://scikit-learn.org/stable/model_persistence.html#security-maintainability-
 /Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator LabelEncoder from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
 https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
   warnings.warn(
-[2025-11-13 16:59:40,775] ERROR in app: Exception on /analyze [POST]
-Traceback (most recent call last):
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/product.py", line 185, in analyze
-    manual_prediction = model.predict(manual_input_df)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 903, in predict
-    proba = self.predict_proba(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 945, in predict_proba
-    X = self._validate_X_predict(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 632, in _validate_X_predict
-    if self.estimators_[0]._support_missing_values(X):
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/tree/_classes.py", line 188, in _support_missing_values
-    and self.monotonic_cst is None
-        ^^^^^^^^^^^^^^^^^^
-AttributeError: 'DecisionTreeClassifier' object has no attribute 'monotonic_cst'
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator RandomForestClassifier from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator LabelEncoder from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-[2025-11-13 16:59:50,860] ERROR in app: Exception on /analyze [POST]
-Traceback (most recent call last):
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/product.py", line 185, in analyze
-    manual_prediction = model.predict(manual_input_df)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 903, in predict
-    proba = self.predict_proba(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 945, in predict_proba
-    X = self._validate_X_predict(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 632, in _validate_X_predict
-    if self.estimators_[0]._support_missing_values(X):
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/tree/_classes.py", line 188, in _support_missing_values
-    and self.monotonic_cst is None
-        ^^^^^^^^^^^^^^^^^^
-AttributeError: 'DecisionTreeClassifier' object has no attribute 'monotonic_cst'
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator RandomForestClassifier from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator LabelEncoder from version 1.3.2 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-[2025-11-13 17:00:08,678] ERROR in app: Exception on /analyze [POST]
-Traceback (most recent call last):
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/product.py", line 185, in analyze
-    manual_prediction = model.predict(manual_input_df)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 903, in predict
-    proba = self.predict_proba(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 945, in predict_proba
-    X = self._validate_X_predict(X)
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/ensemble/_forest.py", line 632, in _validate_X_predict
-    if self.estimators_[0]._support_missing_values(X):
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-  File "/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/sklearn/tree/_classes.py", line 188, in _support_missing_values
-    and self.monotonic_cst is None
-        ^^^^^^^^^^^^^^^^^^
-AttributeError: 'DecisionTreeClassifier' object has no attribute 'monotonic_cst'
+[2025-11-13 17:05:49 +0530] [98749] [INFO] Handling signal: hup
+[2025-11-13 17:05:49 +0530] [98749] [INFO] Hang up: Master
+[2025-11-13 17:05:49 +0530] [99871] [INFO] Booting worker with pid: 99871
+[2025-11-13 17:05:49 +0530] [98749] [ERROR] Worker (pid:98795) was sent SIGHUP!
+/Users/ashokr/Downloads/AsteroMiner-main/.venv/lib/python3.14/site-packages/cohere/core/pydantic_utilities.py:13: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.datetime_parse import parse_date as parse_date

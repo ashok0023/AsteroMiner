@@ -133,6 +133,19 @@ def analyze():
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
 
+    # Compatibility fix for models pickled with older scikit-learn versions
+    # Newer sklearn versions may expect tree estimators to have attributes
+    # like `monotonic_cst`. If those are missing (when unpickling older
+    # models) add them with a safe default to avoid AttributeError at
+    # prediction time.
+    try:
+        if hasattr(model, 'estimators_'):
+            for est in model.estimators_:
+                if not hasattr(est, 'monotonic_cst'):
+                    setattr(est, 'monotonic_cst', None)
+    except Exception as _e:
+        # Non-fatal: if patching fails, prediction may still raise an error
+        print('sklearn compatibility patch error:', _e)
     label_encoder_path = 'label_encoder.pkl'
     with open(label_encoder_path, 'rb') as file:
         label_encoder = pickle.load(file)
