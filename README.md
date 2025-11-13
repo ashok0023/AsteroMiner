@@ -1,4 +1,4 @@
-# 🌌 AsteroMiner AI – Smart India Hackathon 2024 Winner 🏆🚀  
+# 🌌 AsteroMiner AI 
 **Identifying High-Value Asteroids for Space Mining Using Machine Learning**
 
 
